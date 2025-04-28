@@ -1,8 +1,9 @@
 ---
 version: 0.1
-runson: win
+runson: 
+win
 
-autosplit: true
+autosplit: adsa 
 concurrency: 4
 
 pre:
