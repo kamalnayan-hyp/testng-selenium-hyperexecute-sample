@@ -1,24 +1,142 @@
----
 version: 0.1
-runson: win
-// i am testting
 
-###
+ 
 
-autosplit: true 
-concurrency: 4
+globalTimeout: 150
+
+testSuiteTimeout: 150
+
+testSuiteStep: 150
+
+ 
+
+runson: linux
+
+#image: karate
+
+ 
+
+autosplit: true
+
+ 
+
+retryOnFailure: false
+
+maxRetries: 2
+
+ 
+
+concurrency: 5
+
+<<<<<<< HEAD
+
+
+=======
+
+ 
+
+env:
+
+  JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64/
+
+ 
+
+>>>>>>> af23fc4e6c50ba729968a2138fd32fd38b769841
+
+runtime:
+
+  language: java
+
+  version: 17
+
+ 
+
+ 
+
+#setting up server in the background
+
+background:
+
+  #- mvn test -s settings.xml  #-Dtest=LocalRunner #-Dmaven.repo.local=m2 -o || true
+
+ 
 
 pre:
-  - mvn dependency:resolve
+
+  # Skip execution of the tests in the pre step
+
+  - mvn clean -s settings.xml  #-Dmaven.repo.local=m2 -o -Dmaven.test.skip=true
+
+ 
+
+ 
+
+uploadArtefacts:
+
+  - name: WAF TEST REPORTS
+
+    path:
+
+      - test-results/**
+
+      - dashboard/**
+
+      - dashboard.htm
+
+ 
+
+ 
+
+report: true
+
+partialReports:
+
+  frameworkName: WAF
+
+  location: test-results/
+
+  type: json
+
+ 
+
+cacheKey: '{{ checksum "pom.xml" }}'
+
+cacheDirectories:
+
+  - .m2
+
+ 
 
 testDiscovery:
+
   type: raw
+
   mode: dynamic
-  command: grep 'test name' xml/testng_win.xml | awk '{print$2}' | sed 's/name=//g' | sed 's/\x3e//g'
 
-testRunnerCommand: mvn test `-Dplatname=win `-Dmaven.repo.local=./.m2 dependency:resolve `-DselectedTests=$test
+  #command: grep -rl --include="VulcanBddTest.*" "" src/test/java/com/wellsfargo/vulcan/full/testsuites
 
-retryOnFailure: true
-maxRetries: 1
+  command: grep -E '@Test' -A 1 src/test/java/com/wellsfargo/vulcan/full/testsuites/GitTest.java | grep -E 'public void' | sed -E 's/.*public void ([a-zA-Z0-9_]+)\(.*/\1/'
 
-jobLabel: [selenium-testng, win, v1, autosplit]
+ 
+
+scenarioCommandStatusOnly: true
+
+ 
+
+#Stopping the server
+
+post:
+
+  #- curl http://localhost:9826/__admin/stop
+
+ 
+
+ 
+
+#testRunnerCommand: mvn test -Dtest=-tests=GitTest#$test  -s settings.xml #-PsuiteFile=test-run-config.xml   #-DFeaturePath="$test" -Dmaven.repo.local=m2 -o --
+
+testRunnerCommand: mvn test -Dtest=GitTest#$test -s settings.xml
+
+ 
+
+jobLabel : [WAF,Maven,Java 17]
