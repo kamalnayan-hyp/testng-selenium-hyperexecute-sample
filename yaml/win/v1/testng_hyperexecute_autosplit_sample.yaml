@@ -1,12 +1,11 @@
 ---
 version: 0.1
-runson: 
-win
+runson: win
 // i am testting
 
 ###
 
-autosplit: adsa 
+autosplit: true 
 concurrency: 4
 
 pre:
