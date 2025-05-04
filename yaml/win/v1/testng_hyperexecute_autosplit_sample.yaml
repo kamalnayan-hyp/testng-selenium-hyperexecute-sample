@@ -26,7 +26,7 @@ testRunnerCommand: mvn test `-Dplatname=win `-Dmaven.repo.local=./.m2 dependency
 
 report: true
 partialReports:
-#   # - location: yaml/linux/v1/large_dummy_report.html
+    location: target
 #   #   type: html
 #     frameworkName: waf
     email:
