@@ -27,7 +27,7 @@ testRunnerCommand: mvn test `-Dplatname=win `-Dmaven.repo.local=./.m2 dependency
 report: true
 partialReports:
     location: target
-#   #   type: html
+    type: html
 #     frameworkName: waf
     email:
       to:
