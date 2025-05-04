@@ -32,7 +32,7 @@ partialReports:
     email:
       to:
         - currentUser
-        - kamalnayan@lambdatest.com
+        # - kamalnayan@lambdatest.com
         # - ambarg@lambdatest.com
         # - rahulchopra@lambdatest.com
 
