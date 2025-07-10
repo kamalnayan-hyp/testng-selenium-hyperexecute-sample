@@ -3,7 +3,7 @@ version: 0.1
 runson: win
 
 autosplit: true
-concurrency: 4
+concurrency: 3
 
 runtime:
   language: java
