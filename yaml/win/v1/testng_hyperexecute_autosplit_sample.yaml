@@ -25,5 +25,11 @@ testRunnerCommand: mvn test `-Dplatname=win `-Dmaven.repo.local=./.m2 dependency
 
 retryOnFailure: true
 maxRetries: 1
-
+partialReports:
+ location: target/surefire-reports/html
+ type: html
+ frameworkName: waf
+ email:
+    to:
+      - kamalnayan@lambdatest.com
 jobLabel: [selenium-testng, win, v1, autosplit]
