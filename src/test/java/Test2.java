@@ -46,10 +46,10 @@ public class Test2
         capabilities.setCapability("visual",true);
         // capabilities.setCapability("selenium_version", "4.24.0");
 
-        capabilities.setCapability("accessibility", true); // Enable accessibility testing
-        capabilities.setCapability("accessibility.wcagVersion", "wcag21a"); // Specify WCAG version (e.g., WCAG 2.1 Level A)
-        capabilities.setCapability("accessibility.bestPractice", false); // Exclude best practice issues from results
-        capabilities.setCapability("accessibility.needsReview", true); // Include issues that need review
+        // capabilities.setCapability("accessibility", true); // Enable accessibility testing
+        // capabilities.setCapability("accessibility.wcagVersion", "wcag21a"); // Specify WCAG version (e.g., WCAG 2.1 Level A)
+        // capabilities.setCapability("accessibility.bestPractice", false); // Exclude best practice issues from results
+        // capabilities.setCapability("accessibility.needsReview", true); // Include issues that need review
 
         try
         {
