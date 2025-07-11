@@ -3,7 +3,7 @@ version: 0.1
 runson: linux
 
 autosplit: true
-concurrency: 4
+concurrency: 1
 
 runtime:
   language: java
@@ -26,4 +26,12 @@ testRunnerCommand: mvn test -Dplatname=linux -Dmaven.repo.local=./.m2 dependency
 retryOnFailure: true
 maxRetries: 1
 
+report: true
+partialReports:
+ location: target/surefire-reports/html
+ type: html
+ frameworkName: waf
+ email:
+    to:
+      - kamalnayan@lambdatest.com
 jobLabel: [selenium-testng, linux, v1, autosplit]
