@@ -27,6 +27,8 @@ retryOnFailure: true
 maxRetries: 1
 report: true
 partialReports:
+ type: html
+ location: /test-results
  email:
     to:
       - kamalnayan@lambdatest.com
