@@ -10,7 +10,7 @@
 			<parameter name="browser" value="Chrome"/>
 			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
-			<parameter name="resolution" value="1024x768"/>
+			<parameter name="resolution" value="1024sd768"/>
 			<classes>
 				<class name="Test1" />
 			</classes>
@@ -19,7 +19,7 @@
 			<parameter name="browser" value="MicrosoftEdge"/>
 			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
-			<parameter name="resolution" value="1024x768"/>
+			<parameter name="resolution" value="1024s768"/>
 			<classes>
 				<class name="Test2" />
 			</classes>
