@@ -30,7 +30,7 @@ report: true
 partialReports:
  location: target/surefire-reports/html
  type: html
- frameworkName: waf
+ # frameworkName: waf
  email:
     to:
       - kamalnayan@lambdatest.com
