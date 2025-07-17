@@ -7,7 +7,7 @@
 	</listeners>
 
 	<test name="Test_1">
-			<parameter name="browser" value="Chrome"/>
+			<parameter name="browser" value="saf"/>
 			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024sd768"/>
