@@ -120,7 +120,7 @@ public class Test2
     {
         if (driver != null)
         {
-            ((JavascriptExecutor) driver).executeScript("lambda-status=" + status);
+            ((JavascriptExecutor) driver).executeScript("lambda-status=" + "skipped");
             driver.quit();
         }
     }
