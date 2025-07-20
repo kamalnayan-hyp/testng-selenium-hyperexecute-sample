@@ -43,7 +43,7 @@ public class Test1
         capabilities.setCapability("name", "[HyperExecute - 1] Demonstration of the TestNG Framework");
         // capabilities.setCapability("platform", platformName);
         capabilities.setCapability("browserName", browser);
-        capabilities.setCapability("version", "121.0");
+        capabilities.setCapability("version", version);
 
         capabilities.setCapability("tunnel",false);
         capabilities.setCapability("network",true);

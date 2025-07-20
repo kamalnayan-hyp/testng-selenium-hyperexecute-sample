@@ -38,7 +38,7 @@ public class Test2
 
         // capabilities.setCapability("platform", platformName);
         capabilities.setCapability("browserName", browser);
-        capabilities.setCapability("version", "121.0");
+        capabilities.setCapability("version", version);
 
         capabilities.setCapability("tunnel",false);
         capabilities.setCapability("network",true);
