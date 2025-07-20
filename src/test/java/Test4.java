@@ -32,26 +32,26 @@ public class Test4
     @Parameters(value={"browser","version","platform", "resolution"})
     public void testSetUp(String browser, String version, String platform, String resolution) throws Exception
     {
-        String platformName = System.getenv("HYPEREXECUTE_PLATFORM") != null ? System.getenv("HYPEREXECUTE_PLATFORM") : platform;
+        // String platformName = System.getenv("HYPEREXECUTE_PLATFORM") != null ? System.getenv("HYPEREXECUTE_PLATFORM") : platform;
         
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("build", "[HyperExecute - 4] Demonstration of the TestNG Framework");
         capabilities.setCapability("name", "[HyperExecute - 4] Demonstration of the TestNG Framework");
 
-        capabilities.setCapability("platform", platformName);
+        // capabilities.setCapability("platform", platformName);
         capabilities.setCapability("browserName", browser);
-        capabilities.setCapability("version", version);
+        capabilities.setCapability("version", "121.0");
 
         capabilities.setCapability("tunnel",false);
         capabilities.setCapability("network",true);
         capabilities.setCapability("console",true);
         capabilities.setCapability("visual",true);
-        capabilities.setCapability("selenium_version", "4.24.0");
+        // capabilities.setCapability("selenium_version", "4.24.0");
 
-        capabilities.setCapability("accessibility", true); // Enable accessibility testing
-        capabilities.setCapability("accessibility.wcagVersion", "wcag21a"); // Specify WCAG version (e.g., WCAG 2.1 Level A)
-        capabilities.setCapability("accessibility.bestPractice", false); // Exclude best practice issues from results
-        capabilities.setCapability("accessibility.needsReview", true); // Include issues that need review
+        // capabilities.setCapability("accessibility", true); // Enable accessibility testing
+        // capabilities.setCapability("accessibility.wcagVersion", "wcag21a"); // Specify WCAG version (e.g., WCAG 2.1 Level A)
+        // capabilities.setCapability("accessibility.bestPractice", false); // Exclude best practice issues from results
+        // capabilities.setCapability("accessibility.needsReview", true); // Include issues that need review
 
         try
         {
