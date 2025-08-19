@@ -5,6 +5,7 @@ runson: win
 autosplit: true
 concurrency: 4
 
+image: playwright
 runtime:
   language: java
   version: 11
