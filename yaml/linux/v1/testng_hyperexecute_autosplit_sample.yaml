@@ -3,8 +3,8 @@ version: 0.1
 runson: linux
 
 autosplit: true
-concurrency: 4
-image: playwright
+concurrency: 2
+image: python
 runtime:
   language: java
   version: 11
