@@ -4,7 +4,7 @@ runson: linux
 
 autosplit: true
 concurrency: 2
-image: dotnet_v1
+image: python
 runtime:
   language: java
   version: 11
