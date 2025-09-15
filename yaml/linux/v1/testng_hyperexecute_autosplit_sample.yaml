@@ -13,6 +13,13 @@ cacheKey: '{{ checksum "pom.xml" }}'
 cacheDirectories:
   - .m2
 
+uploadArtefacts:
+  - name: WAF Report
+    path:
+      - logs/**
+    email:
+      to: 
+        - ${email}
 pre:
   - mvn -Dmaven.repo.local=./.m2 dependency:resolve
 
