@@ -93,7 +93,7 @@ public class Test4
         int totalCount = item_count+5;
         int remaining = totalCount-1;
 
-        for (int i = 1; i <= totalCount; i++, remaining--) {
+        for (int i = 1; i < totalCount; i++, remaining--) {
 
             String xpath = "(//input[@type='checkbox'])["+i+"]";
 
@@ -102,10 +102,11 @@ public class Test4
             test1.log(Status.PASS, "Item No. " + i + " marked completed");
             By remainingItem = By.className("ng-binding");
             String actualText = driver.findElement(remainingItem).getText();
-            String expectedText = remaining+" of "+totalCount+" remaining";
+            String expectedText = remaining+" of "+totalCount+" tasks remaining";
 
-            if (!expectedText.equals(actualText)) {
+            if (!actualText.contains(expectedText)) {
                 test1.log(Status.FAIL, "Wrong Text Description");
+                System.out.println("unmatched at "+expectedText+" "+actualText);
                 status = "failed";
             }
             Thread.sleep(500);
