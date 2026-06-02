@@ -31,7 +31,7 @@ public class Test2 {
     String username = Test1.username;
     String access_key = Test1.access_key;
 
-    String testURL = "https://lambdatest.github.io/sample-todo-app/";
+    String testURL = "https://ltqa-frontend.lambdatestinternal.com/sample-todo-app/";
     String testURLTitle = "Sample page - lambdatest.com";
 
     ExtentSparkReporter spark = new ExtentSparkReporter("target/surefire-reports/html/extentReport.html");
@@ -127,11 +127,11 @@ public class Test2 {
             driver.findElement(By.xpath(xpath)).click();
             Thread.sleep(500);
             test1.log(Status.PASS, "Item No. " + i + " marked completed");
-            By remainingItem = By.className("ng-binding");
+            By remainingItem = By.cssSelector("[data-testid='remaining-count']");
             String actualText = driver.findElement(remainingItem).getText();
-            String expectedText = remaining + " of " + totalCount + " tasks remaining";
+            String expectedText = remaining + " of " + totalCount + " remaining";
 
-            if (!actualText.contains(expectedText)) {
+            if (!actualText.toLowerCase().contains(expectedText.toLowerCase())) {
                 test1.log(Status.FAIL, "Wrong Text Description");
                 System.out.println("unmatched at " + expectedText + " " + actualText);
                 status = "failed";
